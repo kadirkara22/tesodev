@@ -93,4 +93,102 @@
   line-height: 14px;
   cursor: pointer;
 }
+
+.listPage-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.listPage img {
+  height: 63px;
+  width: 149px;
+  margin-left: 37px;
+  margin-top: 27px;
+  border-radius: 0px;
+}
+
+.listPage input {
+  height: 46px;
+  width: 509px;
+  margin-left: 35px;
+  margin-top: 35px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  padding-left: 20px;
+  padding-top: 13px;
+  padding-bottom: 7px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #484848;
+}
+
+.listPage button {
+  height: 46px;
+  width: 138px;
+  margin-left: 24px;
+  margin-top: 32px;
+  margin-bottom: 80px;
+  border-radius: 8px;
+  background: #4f75c2;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.listPageResults {
+  margin-left: 223px;
+  margin-right: 407px;
+}
+
+.listPageResults-orderby {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.listPageResults-orderby img {
+  height: 24px;
+  width: 26px;
+  margin-left: 754px;
+  border-radius: 0px;
+}
+
+.listPageResults-orderby-dropdown {
+  position: relative;
+  display: inline-block;
+  height: 25px;
+  width: 97px;
+  margin-left: 8px;
+}
+
+.listPageResults-orderby-dropdown-dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.listPageResults-orderby-dropdown-dropbtn-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.listPageResults-orderby-dropdown-dropbtn-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 /*# sourceMappingURL=Content.css.map */

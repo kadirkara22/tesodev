@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import Results from './Results'
+import LandingPage from './LandingPage'
 import SearchInput from './SearchInput'
 
-const Content = () => {
+const Content = ({ showMore }) => {
     const [searchUserName, setSearchUserName] = useState("")
+
 
     return (
         <div>
+
             <SearchInput handleOnChange={setSearchUserName} />
-            <Results searchUserName={searchUserName} />
+            <LandingPage searchUserName={searchUserName} showMore={showMore} />
+
         </div>
     )
 }

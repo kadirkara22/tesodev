@@ -12,7 +12,6 @@
       border-radius: 8px;
       background: #ffffff;
       border: 1px solid #000000;
-      box-sizing: border-box;
       border-radius: 8px;
     }
   }
@@ -29,7 +28,7 @@
   }
 }
 
-//results
+//Landing Page
 
 .results {
   height: 300px;
@@ -84,4 +83,107 @@
     line-height: 14px;
     cursor: pointer;
   }
+}
+
+//ListPage Page
+
+.listPage {
+  &-header {
+    display: flex;
+  }
+  img {
+    height: 63px;
+    width: 149px;
+    margin-left: 37px;
+    margin-top: 27px;
+    border-radius: 0px;
+  }
+  input {
+    height: 46px;
+    width: 509px;
+    margin-left: 35px;
+    margin-top: 35px;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    padding-left: 20px;
+    padding-top: 13px;
+    padding-bottom: 7px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #484848;
+  }
+  &-header-btn {
+    height: 46px;
+    width: 138px;
+    margin-left: 24px;
+    margin-top: 32px;
+    margin-bottom: 80px;
+    border-radius: 8px;
+    background: #4f75c2;
+    color: #ffffff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+//ListPageResults
+.listPageResults {
+  margin-left: 223px;
+  margin-right: 407px;
+  &-orderby {
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      height: 24px;
+      width: 26px;
+      margin-left: 754px;
+      border-radius: 0px;
+    }
+
+    &-dropdown {
+      position: relative;
+      display: inline-block;
+      height: 25px;
+      width: 97px;
+      margin-left: 8px;
+      font-size: 18px;
+      line-height: 21px;
+      color: #484848;
+      background: #ffffff;
+
+      &:hover &-dropbtn-content {
+        display: block;
+      }
+
+      &-dropbtn {
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+
+        &-content {
+          display: none;
+          position: absolute;
+          z-index: 1;
+
+          a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+
+          a:hover {
+            background-color: #f1f1f1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }

@@ -9,8 +9,9 @@ const data = MockUsersList.data.map((item) =>
         return store;
     }, {})
 );
-const Results = ({ searchUserName }) => {
-    const [visible, setVisible] = useState(3)
+const LandingPage = ({ searchUserName, showMore }) => {
+    const [visible, setVisible] = useState(3);
+
 
     const filteredUserList = data.filter((user) =>
         `${user.NameSurname}`.toLowerCase().includes(searchUserName.toLowerCase())
@@ -18,15 +19,17 @@ const Results = ({ searchUserName }) => {
 
 
     //console.log(data)
-    const showMoreItems = () => {
+    /* const showMoreItems = () => {
         setVisible((prevValue) => prevValue + 3);
+    } */
+    const showMoreItems = () => {
+        showMore(true)
     }
-
     return (
         <div className="results">
             {
-                filteredUserList.slice(0, visible).map(item => (
-                    <>
+                filteredUserList.slice(0, visible).map((item, index) => (
+                    <div key={index}>
                         <div className="results-title">
                             <div className="results-title-city">{item.Country} - {item.City}</div>
                             <div className="results-title-email">Email: {item.Email}</div>
@@ -34,7 +37,7 @@ const Results = ({ searchUserName }) => {
                         <div className="results-name">{item.NameSurname} - {item.Date.slice(6)}</div>
                         <div className="results-cizgi"></div>
 
-                    </>
+                    </div>
                 ))
             }
             <div className="results-more" onClick={showMoreItems}>Show More...</div>
@@ -42,4 +45,4 @@ const Results = ({ searchUserName }) => {
     )
 }
 
-export default Results
+export default LandingPage
