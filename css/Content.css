@@ -1,0 +1,94 @@
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.search-input input {
+  height: 46px;
+  width: 709px;
+  margin-left: 209px;
+  margin-right: 16px;
+  padding-left: 32%;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.search-btn {
+  height: 46px;
+  width: 138px;
+  border-radius: 8px;
+  background: #204080;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 21px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.results {
+  height: 300px;
+  width: 709px;
+  margin-left: 209px;
+  margin-bottom: 152px;
+  border-radius: 4px;
+  border: 1px solid #484848;
+}
+
+.results-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.results-title-city {
+  height: 31.42px;
+  width: 345px;
+  margin-left: 32px;
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #484848;
+}
+
+.results-title-email {
+  height: 31px;
+  width: 216px;
+  margin-top: 12px;
+  color: #484848;
+}
+
+.results-name {
+  height: 26px;
+  width: 207px;
+  margin-left: 32px;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #686868;
+}
+
+.results-cizgi {
+  height: 0px;
+  width: 644.0006076203483px;
+  margin-left: 30px;
+  border: 1px solid #585858;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+          transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.results-more {
+  height: 52px;
+  width: 643.9996948242188px;
+  margin-left: 317px;
+  margin-top: 42px;
+  font-size: 12px;
+  line-height: 14px;
+}
+/*# sourceMappingURL=Content.css.map */

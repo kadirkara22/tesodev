@@ -1,0 +1,18 @@
+.header-logo img {
+  height: 115px;
+  width: 278px;
+  margin-left: 440px;
+  margin-top: 237px;
+  margin-bottom: 10px;
+}
+
+.header-title {
+  height: 20px;
+  width: 220px;
+  margin-left: 653px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #484848;
+  margin-bottom: 44px;
+}
+/*# sourceMappingURL=logo.css.map */
