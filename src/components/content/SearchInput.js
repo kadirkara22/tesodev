@@ -1,10 +1,13 @@
 import React from 'react'
 import "./Content.scss"
-const SearchInput = () => {
+const SearchInput = ({ handleOnChange }) => {
+
     return (
         <div className="search">
             <div className="search-input">
-                <input type="text" id="text" name="text" />
+                <input type="text" id="text" name="text" onChange={(event) => {
+                    handleOnChange(event.target.value);
+                }} />
             </div>
             <button className="search-btn">Search</button>
         </div>

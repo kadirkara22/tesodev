@@ -1,5 +1,5 @@
 {
-  "cols": ["Name Surname", "Company", "Email", "Date", "Country", "City"],
+  "cols": ["NameSurname", "Company", "Email", "Date", "Country", "City"],
   "data": [
     [
       "Hyacinth Vincent",
