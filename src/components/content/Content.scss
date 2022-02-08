@@ -124,6 +124,7 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 18px;
     line-height: 21px;
+    cursor: pointer;
   }
 }
 
@@ -133,11 +134,13 @@
   margin-right: 407px;
   &-orderby {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
 
     img {
       height: 24px;
       width: 26px;
+      margin-top: -4px;
       margin-left: 754px;
       border-radius: 0px;
     }
@@ -151,14 +154,14 @@
       font-size: 18px;
       line-height: 21px;
       color: #484848;
-      background: #ffffff;
 
       &:hover &-dropbtn-content {
         display: block;
       }
 
       &-dropbtn {
-        padding: 16px;
+        width: 97px;
+        height: 25px;
         font-size: 16px;
         border: none;
         cursor: pointer;
@@ -167,16 +170,27 @@
           display: none;
           position: absolute;
           z-index: 1;
+          border: 1px solid #484848;
+          font-size: 14px;
+          line-height: 16px;
+          padding-top: 10px;
+          padding-left: 17px;
+          background: white;
 
-          a {
+          div {
+            height: 40px;
+            width: 156px;
             color: black;
-            padding: 12px 16px;
             text-decoration: none;
             display: block;
+            background: white;
+            margin-bottom: 6px;
+            cursor: pointer;
           }
 
-          a:hover {
-            background-color: #f1f1f1;
+          div:hover {
+            background: #f1f1f1;
+            cursor: pointer;
           }
         }
       }
@@ -186,4 +200,56 @@
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+//Pagination
+
+.center {
+  margin-left: 353px;
+  margin-top: 69px;
+  margin-bottom: 112px;
+
+  &-pagination {
+    display: inline-block;
+
+    &-previous {
+      height: 25px;
+      width: 85px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      color: #484848;
+      border: 1px solid #484848;
+    }
+    &-page {
+      height: 24px;
+      width: 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      border: 1px solid #484848;
+    }
+
+    &-next {
+      height: 25px;
+      width: 85px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      color: #484848;
+      border: 1px solid #484848;
+    }
+    a {
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+    }
+    &-active {
+      background: #204080;
+      color: white;
+      border: 1px solid #ffffff;
+    }
+  }
 }

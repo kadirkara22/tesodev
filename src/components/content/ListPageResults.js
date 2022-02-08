@@ -1,22 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import arrow from "../../img/arrow.svg"
-import MockUsersList from "../../mock-users.json"
 
 
-const cols = MockUsersList.cols;
-const data = MockUsersList.data.map((item) =>
-    item.reduce((store, currentValue, index) => {
-        store[cols[index]] = currentValue;
-        return store;
-    }, {})
-);
+const ListPageResults = ({ data, currentPage, userPerPage, searchUserName }) => {
+    const [orderbyUser, setOrderbyUser] = useState([]);
 
-const ListPageResults = () => {
-    const [visible, setVisible] = useState(6);
+    useEffect(() => {
+        setOrderbyUser(data)
+    }, [data])
 
-    /*    const filteredUserList = data.filter((user) =>
-       `${user.NameSurname}`.toLowerCase().includes(searchUserName.toLowerCase())
-   ); */
+    const OrderbyUserNameAsc = () => {
+        const nameAsc = data.sort((a, b) => (a.NameSurname < b.NameSurname ? -1 : 1))
+        console.log(nameAsc)
+        setOrderbyUser(nameAsc)
+    }
+    const OrderbyUserNameDesc = () => {
+        const nameDesc = data.sort((a, b) => (a.NameSurname < b.NameSurname ? 1 : -1))
+        console.log(nameDesc)
+        setOrderbyUser(nameDesc)
+    }
+    const OrderbyUserYearAsc = () => {
+        const yearAsc = data.sort((a, b) => (a.Date < b.Date ? 1 : -1))
+        //console.log(yearAsc)
+        setOrderbyUser(yearAsc)
+    }
+    const OrderbyUserYearDesc = () => {
+        const yearDesc = data.sort((a, b) => (a.Date < b.Date ? -1 : 1))
+        //console.log(yearDesc)
+        setOrderbyUser(yearDesc)
+    }
+
+
+    const filteredUserList = orderbyUser.filter((user) =>
+        `${user.NameSurname}`.toLowerCase().includes(searchUserName.toLowerCase())
+    );
+
+    const indexLastUser = currentPage * userPerPage;
+    const indexFirstUSer = indexLastUser - userPerPage;
     return (
         <div className="listPageResults">
             <div className="listPageResults-orderby">
@@ -24,17 +44,16 @@ const ListPageResults = () => {
                 <div className="listPageResults-orderby-dropdown">
                     <button className="listPageResults-orderby-dropdown-dropbtn">Order By</button>
                     <div className="listPageResults-orderby-dropdown-dropbtn-content">
-                        <a href="#">Name ascending</a>
-                        <a href="#">Name descending</a>
-                        <a href="#">Year ascending</a>
-                        <a href="#">Year descending</a>
-
+                        <div onClick={OrderbyUserNameAsc}>Name ascending</div>
+                        <div onClick={OrderbyUserNameDesc}>Name descending</div>
+                        <div onClick={OrderbyUserYearAsc}>Year ascending</div>
+                        <div onClick={OrderbyUserYearDesc}>Year descending</div>
                     </div>
                 </div>
             </div>
             <div>
                 {
-                    data.slice(0, visible).map((item, index) => (
+                    filteredUserList.slice(indexFirstUSer, indexLastUser).map((item, index) => (
                         <div key={index}>
                             <div className="results-title">
                                 <div className="results-title-city">{item.Country} - {item.City}</div>
@@ -47,6 +66,7 @@ const ListPageResults = () => {
                     ))
                 }
             </div>
+
         </div>
     )
 }
