@@ -14,14 +14,10 @@ const LandingPage = ({ searchUserName, showMore }) => {
 
 
     const filteredUserList = data.filter((user) =>
-        `${user.NameSurname}`.toLowerCase().includes(searchUserName.toLowerCase())
+        `${user.NameSurname}${user.Country}`.toLowerCase().includes(searchUserName.toLowerCase())
     );
 
 
-    //console.log(data)
-    /* const showMoreItems = () => {
-        setVisible((prevValue) => prevValue + 3);
-    } */
     const showMoreItems = () => {
         showMore(true)
     }
