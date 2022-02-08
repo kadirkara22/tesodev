@@ -7,32 +7,32 @@ const ListPageResults = ({ data, currentPage, userPerPage, searchUserName }) => 
 
     useEffect(() => {
         setOrderbyUser(data)
-    }, [data])
+    }, [setOrderbyUser, data])
 
     const OrderbyUserNameAsc = () => {
-        const nameAsc = data.sort((a, b) => (a.NameSurname < b.NameSurname ? -1 : 1))
+        const nameAsc = orderbyUser.sort((a, b) => (a.NameSurname < b.NameSurname ? -1 : 1))
         console.log(nameAsc)
         setOrderbyUser(nameAsc)
     }
     const OrderbyUserNameDesc = () => {
-        const nameDesc = data.sort((a, b) => (a.NameSurname < b.NameSurname ? 1 : -1))
+        const nameDesc = orderbyUser.sort((a, b) => (a.NameSurname < b.NameSurname ? 1 : -1))
         console.log(nameDesc)
         setOrderbyUser(nameDesc)
     }
     const OrderbyUserYearAsc = () => {
-        const yearAsc = data.sort((a, b) => (a.Date < b.Date ? 1 : -1))
-        //console.log(yearAsc)
+        const yearAsc = orderbyUser.sort((a, b) => (a.Date < b.Date ? 1 : -1))
+        console.log(yearAsc)
         setOrderbyUser(yearAsc)
     }
     const OrderbyUserYearDesc = () => {
-        const yearDesc = data.sort((a, b) => (a.Date < b.Date ? -1 : 1))
-        //console.log(yearDesc)
+        const yearDesc = orderbyUser.sort((a, b) => (a.Date < b.Date ? -1 : 1))
+        console.log(yearDesc)
         setOrderbyUser(yearDesc)
     }
 
 
     const filteredUserList = orderbyUser.filter((user) =>
-        `${user.NameSurname}`.toLowerCase().includes(searchUserName.toLowerCase())
+        `${user.NameSurname}${user.Country}`.toLowerCase().includes(searchUserName.toLowerCase())
     );
 
     const indexLastUser = currentPage * userPerPage;
